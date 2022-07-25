@@ -34,10 +34,10 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
           <span className="nomobile">Axel&nbsp;</span>Andaroth
         </Heading>
       </Link>
-      <Spacer w="100%" className="nomobile" />
+      <Spacer w="100%" />
       {page === "home" && (
-        <Flex className="nomobile">
-          <Link to="about" smooth={true}>
+        <Flex>
+          <Link to="about" smooth={true} className="nomobile">
             <Text
               fontSize="2xl"
               p="2"
@@ -54,7 +54,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
               About me
             </Text>
           </Link>
-          <Link to="work" smooth={true}>
+          <Link to="work" smooth={true} className="nomobile">
             <Text
               fontSize="2xl"
               p="2"

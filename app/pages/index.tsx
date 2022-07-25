@@ -190,7 +190,7 @@ const Home: BlitzPage = () => {
               p="6"
               color="white"
               textAlign="center"
-              m={{ sm: "4", md: "0" }}
+              m="4"
             >
               <Heading as="h2" fontSize="4xl" mb="4">
                 <Text display="none">I have multiple </Text>
