@@ -269,11 +269,13 @@ const Home: BlitzPage = () => {
                   href="https://etherpg.online/"
                 />
               </Grid>
-              <a href="mailto:ax.fiolle@gmail.com">
-                <Button mt="6" className="detail large" fontSize="xl">
-                  Get in touch
-                </Button>
-              </a>
+              <Box>
+                <a href="mailto:ax.fiolle@gmail.com">
+                  <Button mt="6" className="detail large" fontSize="xl">
+                    Get in touch
+                  </Button>
+                </a>
+              </Box>
             </Flex>
           </Box>
         </Flex>
