@@ -1,4 +1,5 @@
 import { BlitzPage } from "blitz"
+import { Img } from "@chakra-ui/react"
 import Layout from "app/core/layouts/Layout"
 
 import {
@@ -44,21 +45,26 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
         <Text mb="2" textAlign="center" fontSize="24px" fontWeight="bold" cursor="pointer">
           @&nbsp;{props.name}
         </Text>
-        <Box maxW="300px" w="100%" h="200px" overflow="hidden" margin="0 auto">
-          <Box
-            maxW="300px"
+        <Box
+          w="100%"
+          h={{ sm: "180px", md: "400px", xl: "180px" }}
+          overflow="hidden"
+          margin="0 auto"
+        >
+          <Img
             w="100%"
-            h="200px"
-            bg={props.bg}
+            h={{ sm: "180px", md: "400px", xl: "180px" }}
+            src={props.bg}
             backgroundSize="cover"
             backgroundPosition="center"
+            alt={props.name}
             css={`
               transition: all 0.5s ease-out;
               &:hover {
                 transform: scale(1.1);
               }
             `}
-          ></Box>
+          />
         </Box>
       </a>
     </GridItem>
@@ -201,7 +207,7 @@ const Home: BlitzPage = () => {
                 <strong>Web3</strong> &amp; <strong>Blockchain</strong>
                 <Text display="none"> experiences:</Text>
               </Heading>
-              <Text maxW="50%" margin="0 auto">
+              <Text maxW={{ sm: "none", md: "50%" }} margin="0 auto">
                 I used to work with the best Web3 actors who trust me to implement their website
                 perfectly.
               </Text>
@@ -209,26 +215,21 @@ const Home: BlitzPage = () => {
                 <strong>My skills are refined and precise, I am like a ninja 🥷</strong>
               </Text>
               <Grid
-                templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
+                templateColumns={{ lg: "repeat(1, 1fr)", xl: "repeat(3, 1fr)" }}
                 gap={6}
-                w={{ sm: "100%", md: "1024px" }}
-                maxW="100%"
+                w="100%"
                 alignSelf="center"
                 mt="2"
               >
-                <CustomerCard
-                  name="RTFKT"
-                  bg="url('./img/c2c/rtfkt.jpeg')"
-                  href="https://rtfkt.com/"
-                />
+                <CustomerCard name="RTFKT" bg="./img/c2c/rtfkt.jpeg" href="https://rtfkt.com/" />
                 <CustomerCard
                   name="GameOfBlocks"
-                  bg="url('./img/c2c/screenshot.jpeg')"
+                  bg="./img/c2c/screenshot.jpeg"
                   href="https://gameofblocks.io/"
                 />
                 <CustomerCard
                   name="EtheRPG Online"
-                  bg="url('./img/c2c/etherpg.jpeg')"
+                  bg="./img/c2c/etherpg.jpeg"
                   href="https://etherpg.online/"
                 />
               </Grid>
@@ -258,7 +259,7 @@ const Home: BlitzPage = () => {
           border-bottom: 2px solid #cc9a54;
         }
         button.detail.large {
-          padding: 32px;
+          padding: 32px 24px;
           font-size: 32px;
         }
         button.detail.small {
