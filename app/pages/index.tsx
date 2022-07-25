@@ -199,8 +199,8 @@ const Home: BlitzPage = () => {
         bg="url(./img/clonex_003.jpeg)"
         bgMobile="url(./img/clonex_003_mobile.jpeg)"
       >
-        <Flex direction="column" w="100%">
-          <Box alignSelf="center">
+        <Flex direction="column" w="100%" justifyContent="center">
+          <Box m="auto">
             <Flex
               direction="column"
               bg="rgba(0,0,0,.5)"
