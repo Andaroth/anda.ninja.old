@@ -143,7 +143,7 @@ const Home: BlitzPage = () => {
                 </Tooltip>
               </GridItem>
               <GridItem textAlign="center" m="2">
-                <Tooltip label="Follow me on Instagram">
+                <Tooltip label="Check my GitHub code">
                   <a href="https://github.com/Andaroth" target="_blank" rel="noreferrer">
                     <BsGithub className="react-icons" />
                   </a>
