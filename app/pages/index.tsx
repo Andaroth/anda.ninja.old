@@ -22,6 +22,7 @@ import CustomSection from "app/core/components/CustomSection"
 import FloatingMenu from "app/core/components/FloatingMenu"
 
 import { BsTwitter, BsInstagram, BsLinkedin, BsGithub } from "react-icons/bs"
+import { EmailIcon } from "@chakra-ui/icons"
 
 import Footer from "app/core/components/Footer"
 
@@ -287,8 +288,20 @@ const Home: BlitzPage = () => {
               </Grid>
               <Box>
                 <a href="mailto:ax.fiolle@gmail.com">
-                  <Button mt="6" className="detail large" fontSize="xl">
-                    Get in touch
+                  <Button
+                    mt="6"
+                    className="detail large"
+                    fontSize="xl"
+                    css={`
+                      &:hover .icon {
+                        color: white;
+                      }
+                    `}
+                  >
+                    <Flex>
+                      <Text mr="1">Get in touch</Text>
+                      <EmailIcon className="icon" m="auto" mx="2px" color="#cc9a54" />
+                    </Flex>
                   </Button>
                 </a>
               </Box>

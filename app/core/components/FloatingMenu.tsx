@@ -1,6 +1,7 @@
 import { FC } from "react"
 
 import { Flex, Text, Heading, Spacer, Button } from "@chakra-ui/react"
+import { EmailIcon } from "@chakra-ui/icons"
 
 import { Link } from "react-scroll"
 
@@ -79,21 +80,25 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
               </Link>
               <a href="mailto:ax.fiolle@gmail.com">
                 <Button
-                  className="detail small"
+                  variant="outline"
                   mr="4"
                   cursor="pointer"
                   mt="2"
+                  px="1.5"
                   textTransform="uppercase"
                   css={`
-                    padding: 0;
-                    font-family: "UbuntuB";
                     &:hover {
+                      color: black;
+                    }
+                    &:hover .icon {
                       color: #cc9a54;
-                      border-bottom: 4px solid #cc9a54;
                     }
                   `}
                 >
-                  Contact
+                  <Flex>
+                    <Text mr="1">Contact</Text>
+                    <EmailIcon className="icon" m="auto" mx="2px" />
+                  </Flex>
                 </Button>
               </a>
             </Flex>
