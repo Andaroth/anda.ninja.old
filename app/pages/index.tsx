@@ -15,8 +15,17 @@ const UserInfo = () => {
   const [isSigning, setSigning] = useState(false)
   const [isLogging, setLogging] = useState(false)
 
-  if (isSigning) return <SignupForm onSuccess={() => setSigning(false)} />
-  if (isLogging) return <LoginForm onSuccess={() => setLogging(false)} />
+  if (isSigning) return <SignupForm onLeave={() => setSigning(false)} />
+  if (isLogging)
+    return (
+      <LoginForm
+        onLeave={() => setLogging(false)}
+        gotoSignup={() => {
+          setLogging(false)
+          setSigning(true)
+        }}
+      />
+    )
 
   if (currentUser) {
     return (
@@ -43,7 +52,13 @@ const UserInfo = () => {
   } else {
     return (
       <Flex direction="row">
-        <Button width="100%" mr="1" color="black" onClick={() => setSigning(true)}>
+        <Button
+          variant="outline"
+          width="100%"
+          mr="1"
+          color="white"
+          onClick={() => setSigning(true)}
+        >
           <strong>Sign Up</strong>
         </Button>
         <Button width="100%" ml="1" color="black" onClick={() => setLogging(true)}>
