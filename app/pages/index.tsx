@@ -188,14 +188,15 @@ const Home: BlitzPage = () => {
       </CustomSection>
       <CustomSection
         id="work"
-        bg="linear-gradient(315deg, rgba(21,102,255,1) 0%, rgba(148,20,161,1) 57%)"
+        bg="url(./img/clonex_003.jpeg)"
+        bgMobile="url(./img/clonex_003_mobile.jpeg)"
       >
         <Flex direction="column" w="100%">
           <Spacer h="100%" />
           <Box alignSelf="center">
             <Flex
               direction="column"
-              bg="rgba(0,0,0,.7)"
+              bg="rgba(0,0,0,.5)"
               borderRadius="2xl"
               p="6"
               color="white"
@@ -211,9 +212,30 @@ const Home: BlitzPage = () => {
                 I used to work with the best Web3 actors who trust me to implement their website
                 perfectly.
               </Text>
-              <Text my="2">
-                <strong>My skills are refined and precise, I am like a ninja 🥷</strong>
-              </Text>
+              <Box alignSelf="center">
+                <Flex>
+                  <Img
+                    src="./img/emoji/wizard.svg"
+                    alt="ninja"
+                    height="24px"
+                    alignSelf="center"
+                    m="auto 8px"
+                  />
+                  <Text my="2">
+                    <strong>
+                      My skills are refined and precise, I am like a ninja
+                      <Text display="none">.</Text>
+                    </strong>
+                  </Text>
+                  <Img
+                    src="./img/emoji/ninja.svg"
+                    alt="ninja"
+                    height="24px"
+                    alignSelf="center"
+                    m="auto 8px"
+                  />
+                </Flex>
+              </Box>
               <Grid
                 templateColumns={{ lg: "repeat(1, 1fr)", xl: "repeat(3, 1fr)" }}
                 gap={6}
