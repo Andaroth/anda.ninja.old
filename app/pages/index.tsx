@@ -222,15 +222,15 @@ const Home: BlitzPage = () => {
                 alignSelf="center"
                 mt="2"
               >
-                <CustomerCard name="RTFKT" bg="./img/c2c/rtfkt.jpeg" href="https://rtfkt.com/" />
+                <CustomerCard name="RTFKT" bg="./img/b2b/rtfkt.jpeg" href="https://rtfkt.com/" />
                 <CustomerCard
                   name="GameOfBlocks"
-                  bg="./img/c2c/screenshot.jpeg"
+                  bg="./img/b2b/screenshot.jpeg"
                   href="https://gameofblocks.io/"
                 />
                 <CustomerCard
                   name="EtheRPG Online"
-                  bg="./img/c2c/etherpg.jpeg"
+                  bg="./img/b2b/etherpg.jpeg"
                   href="https://etherpg.online/"
                 />
               </Grid>
