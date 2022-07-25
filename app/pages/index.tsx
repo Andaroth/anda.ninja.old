@@ -163,6 +163,7 @@ const Home: BlitzPage = () => {
                     href="https://www.linkedin.com/in/axel-fiolle/"
                     target="_blank"
                     rel="noreferrer"
+                    className="social"
                   >
                     <BsLinkedin className="react-icons" />
                   </a>
@@ -170,21 +171,36 @@ const Home: BlitzPage = () => {
               </GridItem>
               <GridItem textAlign="center" m="2">
                 <Tooltip label="Check my GitHub code">
-                  <a href="https://github.com/Andaroth" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://github.com/Andaroth"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="social"
+                  >
                     <BsGithub className="react-icons" />
                   </a>
                 </Tooltip>
               </GridItem>
               <GridItem textAlign="center" m="2">
                 <Tooltip label="Follow me on Twitter">
-                  <a href="https://twitter.com/Andaroth" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://twitter.com/Andaroth"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="social"
+                  >
                     <BsTwitter className="react-icons" />
                   </a>
                 </Tooltip>
               </GridItem>
               <GridItem textAlign="center" m="2">
                 <Tooltip label="Follow me on Instagram">
-                  <a href="https://instagram.com/an.da.ro.th" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://instagram.com/an.da.ro.th"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="social"
+                  >
                     <BsInstagram className="react-icons" />
                   </a>
                 </Tooltip>
@@ -330,7 +346,7 @@ const Home: BlitzPage = () => {
           font-size: 24px;
           margin: 0 auto;
         }
-        .react-icons:hover {
+        .social:hover .react-icons {
           color: #cc9a54;
         }
 
