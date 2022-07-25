@@ -9,6 +9,8 @@ import {
 } from "blitz"
 import LoginForm from "app/auth/components/LoginForm"
 
+import { ChakraProvider } from "@chakra-ui/react"
+
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
 
@@ -17,24 +19,32 @@ export default function App({ Component, pageProps }: AppProps) {
       FallbackComponent={RootErrorFallback}
       onReset={useQueryErrorResetBoundary().reset}
     >
-      {getLayout(<Component {...pageProps} />)}
+      <ChakraProvider>{getLayout(<Component {...pageProps} />)}</ChakraProvider>
     </ErrorBoundary>
   )
 }
 
 function RootErrorFallback({ error, resetErrorBoundary }: ErrorFallbackProps) {
   if (error instanceof AuthenticationError) {
-    return <LoginForm onSuccess={resetErrorBoundary} />
+    return (
+      <ChakraProvider>
+        <LoginForm onSuccess={resetErrorBoundary} />
+      </ChakraProvider>
+    )
   } else if (error instanceof AuthorizationError) {
     return (
-      <ErrorComponent
-        statusCode={error.statusCode}
-        title="Sorry, you are not authorized to access this"
-      />
+      <ChakraProvider>
+        <ErrorComponent
+          statusCode={error.statusCode}
+          title="Sorry, you are not authorized to access this"
+        />
+      </ChakraProvider>
     )
   } else {
     return (
-      <ErrorComponent statusCode={error.statusCode || 400} title={error.message || error.name} />
+      <ChakraProvider>
+        <ErrorComponent statusCode={error.statusCode || 400} title={error.message || error.name} />
+      </ChakraProvider>
     )
   }
 }

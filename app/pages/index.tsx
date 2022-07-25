@@ -1,51 +1,55 @@
-import { Suspense } from "react"
-import { Image, Link, BlitzPage, useMutation, Routes } from "blitz"
+import { Suspense, useState } from "react"
+import { Link, BlitzPage, useMutation, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import logout from "app/auth/mutations/logout"
-import logo from "public/logo.png"
 
-/*
- * This file is just for a pleasant getting started page for your new app.
- * You can delete everything in here and start from scratch if you like.
- */
+import { Heading, Flex, Box, Text, Button } from "@chakra-ui/react"
+
+import LoginForm from "app/auth/components/LoginForm"
+import SignupForm from "app/auth/components/SignupForm"
 
 const UserInfo = () => {
   const currentUser = useCurrentUser()
   const [logoutMutation] = useMutation(logout)
+  const [isSigning, setSigning] = useState(false)
+  const [isLogging, setLogging] = useState(false)
+
+  if (isSigning) return <SignupForm onSuccess={() => setSigning(false)} />
+  if (isLogging) return <LoginForm onSuccess={() => setLogging(false)} />
 
   if (currentUser) {
     return (
-      <>
-        <button
-          className="button small"
+      <Flex direction="row">
+        <Button
+          color="black"
+          mr="1"
           onClick={async () => {
             await logoutMutation()
           }}
         >
           Logout
-        </button>
-        <div>
-          User id: <code>{currentUser.id}</code>
-          <br />
-          User role: <code>{currentUser.role}</code>
-        </div>
-      </>
+        </Button>
+        <Flex direction="column" m="0" ml="1">
+          <Text textAlign="left" m="0" p="0">
+            <code>{currentUser.email}</code>
+          </Text>
+          <Text textAlign="left" m="0" p="0">
+            Role: <code>{currentUser.role}</code>
+          </Text>
+        </Flex>
+      </Flex>
     )
   } else {
     return (
-      <>
-        <Link href={Routes.SignupPage()}>
-          <a className="button small">
-            <strong>Sign Up</strong>
-          </a>
-        </Link>
-        <Link href={Routes.LoginPage()}>
-          <a className="button small">
-            <strong>Login</strong>
-          </a>
-        </Link>
-      </>
+      <Flex direction="row">
+        <Button width="100%" mr="1" color="black" onClick={() => setSigning(true)}>
+          <strong>Sign Up</strong>
+        </Button>
+        <Button width="100%" ml="1" color="black" onClick={() => setLogging(true)}>
+          <strong>Login</strong>
+        </Button>
+      </Flex>
     )
   }
 }
@@ -53,82 +57,23 @@ const UserInfo = () => {
 const Home: BlitzPage = () => {
   return (
     <div className="container">
-      <main>
-        <div className="logo">
-          <Image src={logo} alt="blitzjs" />
-        </div>
-        <p>
-          <strong>Congrats!</strong> Your app is ready, including user sign-up and log-in.
-        </p>
-        <div className="buttons" style={{ marginTop: "1rem", marginBottom: "1rem" }}>
-          <Suspense fallback="Loading...">
-            <UserInfo />
-          </Suspense>
-        </div>
-        <p>
-          <strong>
-            To add a new model to your app, <br />
-            run the following in your terminal:
-          </strong>
-        </p>
-        <pre>
-          <code>blitz generate all project name:string</code>
-        </pre>
-        <div style={{ marginBottom: "1rem" }}>(And select Yes to run prisma migrate)</div>
-        <div>
-          <p>
-            Then <strong>restart the server</strong>
-          </p>
-          <pre>
-            <code>Ctrl + c</code>
-          </pre>
-          <pre>
-            <code>blitz dev</code>
-          </pre>
-          <p>
-            and go to{" "}
-            <Link href="/projects">
-              <a>/projects</a>
-            </Link>
-          </p>
-        </div>
-        <div className="buttons" style={{ marginTop: "5rem" }}>
-          <a
-            className="button"
-            href="https://blitzjs.com/docs/getting-started?utm_source=blitz-new&utm_medium=app-template&utm_campaign=blitz-new"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-          <a
-            className="button-outline"
-            href="https://github.com/blitz-js/blitz"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Github Repo
-          </a>
-          <a
-            className="button-outline"
-            href="https://discord.blitzjs.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Discord Community
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://blitzjs.com?utm_source=blitz-new&utm_medium=app-template&utm_campaign=blitz-new"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by Blitz.js
-        </a>
-      </footer>
+      <Box
+        border="1px solid grey"
+        p="4"
+        borderRadius="2xl"
+        position="fixed"
+        top="24px"
+        right="24px"
+        bg="rgba(0,0,0,.7)"
+        color="white"
+      >
+        <Heading as="h1" mb="4">
+          Axel Andaroth
+        </Heading>
+        <Suspense fallback="Loading...">
+          <UserInfo />
+        </Suspense>
+      </Box>
 
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;700&display=swap");
