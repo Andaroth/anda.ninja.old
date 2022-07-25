@@ -190,6 +190,7 @@ const Home: BlitzPage = () => {
               p="6"
               color="white"
               textAlign="center"
+              m={{ sm: "4", md: "0" }}
             >
               <Heading as="h2" fontSize="4xl" mb="4">
                 <Text display="none">I have multiple </Text>
@@ -206,7 +207,7 @@ const Home: BlitzPage = () => {
               <Grid
                 templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
                 gap={6}
-                w="1024px"
+                w={{ sm: "100%", md: "1024px" }}
                 maxW="100%"
                 alignSelf="center"
                 mt="2"

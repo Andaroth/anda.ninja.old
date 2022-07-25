@@ -1,0 +1,8 @@
+ErrorDocument 404 https://anda.ninja/
+ErrorDocument 403 https://anda.ninja/
+ErrorDocument 500 https://anda.ninja/
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^axelfiolle\.be [NC]
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://axelfiolle.be/$1 [R=301,L]
