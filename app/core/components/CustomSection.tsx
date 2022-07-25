@@ -7,6 +7,7 @@ interface Props {
   width?: string
   height?: string
   bg?: string
+  bgMobile?: string
   backgroundAttachment?: string
   backgroundSize?: string
   backgroundPosition?: string
@@ -19,6 +20,7 @@ export const CustomSection: FC<Props> = ({
   width,
   height,
   bg,
+  bgMobile,
   backgroundAttachment,
   backgroundSize,
   backgroundPosition,
@@ -30,11 +32,16 @@ export const CustomSection: FC<Props> = ({
       id={id}
       w={width || "100vw"}
       minH={height || "100vh"}
-      bg={bg || "transparent"}
       backgroundAttachment={backgroundAttachment || "fixed"}
       backgroundSize={backgroundSize || "cover"}
       backgroundPosition={backgroundPosition || "center"}
       pt={pt || "64px"}
+      css={`
+        background-image: ${bg || "transparent"};
+        @media screen and (max-width: 800px) {
+          background-image: ${bgMobile || bg || "transparent"};
+        }
+      `}
     >
       {children}
     </Flex>

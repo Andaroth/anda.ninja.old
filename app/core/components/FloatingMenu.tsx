@@ -25,6 +25,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
           as="h1"
           cursor="pointer"
           m="2"
+          ml="4"
           css={`
             &:hover {
               color: #cc9a54;

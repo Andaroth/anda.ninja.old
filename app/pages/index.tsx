@@ -68,7 +68,7 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
 const Home: BlitzPage = () => {
   return (
     <div id="top" className="container">
-      <CustomSection bg="url(./img/clonex_001.jpeg)">
+      <CustomSection bg="url(./img/clonex_001.jpeg)" bgMobile="url(./img/clonex_001_mobile.jpeg)">
         <Spacer h="100%" />
         <Flex className="about_content" direction="column">
           <Spacer h="100%" />
@@ -91,7 +91,11 @@ const Home: BlitzPage = () => {
           </Box>
         </Flex>
       </CustomSection>
-      <CustomSection id="about" bg="url(./img/clonex_002.jpeg)">
+      <CustomSection
+        id="about"
+        bg="url(./img/clonex_002.jpeg)"
+        bgMobile="url(./img/clonex_002_mobile.jpeg)"
+      >
         <Spacer w="100%" />
         <Box borderRadius="2xl" overflow="hidden" alignSelf="center" m="4">
           <Flex direction="column" bg="rgba(0,0,0,.5)" color="white" maxW="800px" w="100%">
@@ -115,8 +119,8 @@ const Home: BlitzPage = () => {
                 I was young when I wrote my first line of code, I always have been interested in the
                 computering world.
                 <br />
-                At first, I learned to handle any design tool and also mastering the{" "}
-                <strong>art of code</strong> mostly by myself.
+                At first, I learned to handle any design tool and then discovered the{" "}
+                <strong>art of code</strong> by myself.
               </Text>
               <Text>
                 My natural taste of unknown and my initiative made me discover a lot of wonders,{" "}
