@@ -35,12 +35,12 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
           <Text display="none">
             <span className="nomobile">&nbsp;Axel&nbsp;</span>Andaroth
           </Text>
-          <Text>![Λnda]</Text>
+          <Text fontFamily="UbuntuL">![Λnda]</Text>
         </Heading>
       </Link>
       <Spacer w="100%" />
       {page === "home" && (
-        <Flex>
+        <Flex fontFamily="Ubuntu">
           <Link to="about" smooth={true} className="nomobile">
             <Text
               fontSize="2xl"
@@ -84,6 +84,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
               textTransform="uppercase"
               css={`
                 padding: 0;
+                font-family: "UbuntuB";
                 &:hover {
                   color: #cc9a54;
                   border-bottom: 4px solid #cc9a54;

@@ -42,7 +42,14 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
       `}
     >
       <a href={props.href} target="_blank" rel="noreferrer">
-        <Text p="2" textAlign="center" fontSize="24px" fontWeight="bold" cursor="pointer">
+        <Text
+          p="2"
+          textAlign="center"
+          fontSize="24px"
+          fontWeight="bold"
+          cursor="pointer"
+          fontFamily="Ubuntu"
+        >
           @&nbsp;{props.name}
         </Text>
         <Box
@@ -80,7 +87,7 @@ const Home: BlitzPage = () => {
             <Spacer h="100%" />
             <Box m="4" maxW={{ sm: "none", md: "33vw" }}>
               <Flex direction="column" bg="rgba(0,0,0,.7)" borderRadius="2xl" p="4" mb="4">
-                <Heading color="#cc9a54" w="100%">
+                <Heading color="#cc9a54" w="100%" fontFamily="Ubuntu">
                   Game Maker &amp; Web Dev
                 </Heading>
                 <Text my="6" fontSize="xl" color="white">
@@ -117,7 +124,7 @@ const Home: BlitzPage = () => {
             <Flex bg="rgba(0,0,0,.5)" color="#cc9a54" p="4">
               <Flex>
                 <Avatar name="Axel Fiolle" src="./img/avatar.jpeg" />
-                <Heading fontSize="3xl" ml="4" lineHeight="48px">
+                <Heading fontSize="3xl" ml="4" lineHeight="48px" fontFamily="Ubuntu">
                   <Text display="none">FullStack </Text>
                   <Text>
                     Web dev<Text display="none">eloper</Text> passionate about new tech
@@ -210,7 +217,7 @@ const Home: BlitzPage = () => {
               textAlign="center"
               m="4"
             >
-              <Heading as="h2" fontSize="4xl" mb="4">
+              <Heading as="h2" fontSize="4xl" mb="4" fontFamily="Ubuntu">
                 <Text display="none">I have multiple </Text>
                 <strong>Web3</strong> &amp; <strong>Blockchain</strong>
                 <Text display="none"> experiences:</Text>
@@ -279,31 +286,33 @@ const Home: BlitzPage = () => {
       <style jsx global>{`
         @font-face {
           font-family: "UbuntuTh";
-          src: url("./Ubuntu-Th.ttf") format("truetype");
+          src: url("./Fonts/Ubuntu-Th.ttf") format("truetype");
         }
         @font-face {
           font-family: "UbuntuL";
-          src: url("./Ubuntu-L.ttf") format("truetype");
+          src: url("./Fonts/Ubuntu-L.ttf") format("truetype");
         }
         @font-face {
           font-family: "Ubuntu";
-          src: url("./Ubuntu-R.ttf") format("truetype");
+          src: url("./Fonts/Ubuntu-R.ttf") format("truetype");
         }
         @font-face {
           font-family: "UbuntuB";
-          src: url("./Ubuntu-B.ttf") format("truetype");
+          src: url("./Fonts/Ubuntu-B.ttf") format("truetype");
         }
 
         strong {
           color: #cc9a54;
         }
         button.detail {
+          font-family: "UbuntuB";
           padding: 24px;
           background: #2e3133;
           color: white;
           border-bottom: 2px solid #cc9a54;
         }
         button.detail.large {
+          font-family: "UbuntuL";
           padding: 32px 24px;
           font-size: 32px;
         }
