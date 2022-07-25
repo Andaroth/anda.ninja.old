@@ -43,7 +43,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
         <Spacer w="100%" />
         {page === "home" && (
           <nav>
-            <Flex fontFamily="Ubuntu">
+            <Flex fontFamily="Ubuntu" h="100%">
               <Link to="about" smooth={true} className="nomobile">
                 <Text
                   fontSize="2xl"
