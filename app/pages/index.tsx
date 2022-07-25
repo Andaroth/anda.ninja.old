@@ -30,9 +30,9 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
     <GridItem
       textAlign="center"
       borderRadius="2xl"
+      overflow="hidden"
       bg="black"
       color="white"
-      p="2"
       css={`
         &:hover {
           background: white;
@@ -42,7 +42,7 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
       `}
     >
       <a href={props.href} target="_blank" rel="noreferrer">
-        <Text mb="2" textAlign="center" fontSize="24px" fontWeight="bold" cursor="pointer">
+        <Text p="2" textAlign="center" fontSize="24px" fontWeight="bold" cursor="pointer">
           @&nbsp;{props.name}
         </Text>
         <Box
@@ -50,7 +50,6 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
           h={{ sm: "180px", md: "400px", xl: "180px" }}
           overflow="hidden"
           margin="0 auto"
-          borderRadius="xl"
         >
           <Img
             w="100%"
