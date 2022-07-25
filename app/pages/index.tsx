@@ -145,9 +145,9 @@ const Home: BlitzPage = () => {
                 <strong>art of code</strong> by myself.
               </Text>
               <Text>
-                My natural taste of unknown and my initiative made me discover a lot of wonders,{" "}
+                My natural taste of unknown and my initiative made me discover a lot of wonders.
                 <br />
-                let me help you getting online and expands all over the Internet !
+                Let me help you getting online and to expand all over the Internet!
               </Text>
             </Flex>
             <Grid
