@@ -30,7 +30,7 @@ export const CustomSection: FC<Props> = ({
   return (
     <Flex
       id={id}
-      w={width || "100vw"}
+      w={width || "100%"}
       minH={height || "100vh"}
       backgroundSize={backgroundSize || "cover"}
       backgroundPosition={backgroundPosition || "center"}

@@ -75,26 +75,27 @@ const Home: BlitzPage = () => {
   return (
     <div id="top" className="container">
       <CustomSection bg="url(./img/clonex_001.jpeg)" bgMobile="url(./img/clonex_001_mobile.jpeg)">
-        <Spacer h="100%" />
-        <Flex className="about_content" direction="column">
-          <Spacer h="100%" />
-          <Box m="4" maxW={{ sm: "none", md: "33vw" }}>
-            <Flex direction="column" bg="rgba(0,0,0,.7)" borderRadius="2xl" p="4" mb="4">
-              <Heading color="#cc9a54" w="100%">
-                Game Maker &amp; Web Dev
-              </Heading>
-              <Text my="6" fontSize="xl" color="white">
-                With more than fifteen years <strong>building</strong> and{" "}
-                <strong>revolutionizing</strong> the <strong>web</strong>, I can help you to create
-                and assert your project.
-              </Text>
-              <Box alignSelf="center">
-                <Link to="about" smooth={true}>
-                  <Button className="detail">Learn more</Button>
-                </Link>
-              </Box>
-            </Flex>
-          </Box>
+        <Flex justifyContent="flex-end" w="100%">
+          <Flex className="about_content" direction="column">
+            <Spacer h="100%" />
+            <Box m="4" maxW={{ sm: "none", md: "33vw" }}>
+              <Flex direction="column" bg="rgba(0,0,0,.7)" borderRadius="2xl" p="4" mb="4">
+                <Heading color="#cc9a54" w="100%">
+                  Game Maker &amp; Web Dev
+                </Heading>
+                <Text my="6" fontSize="xl" color="white">
+                  With more than fifteen years <strong>building</strong> and{" "}
+                  <strong>revolutionizing</strong> the <strong>web</strong>, I can help you to
+                  create and assert your project.
+                </Text>
+                <Box alignSelf="center">
+                  <Link to="about" smooth={true}>
+                    <Button className="detail">Learn more</Button>
+                  </Link>
+                </Box>
+              </Flex>
+            </Box>
+          </Flex>
         </Flex>
       </CustomSection>
       <CustomSection
@@ -102,9 +103,17 @@ const Home: BlitzPage = () => {
         bg="url(./img/clonex_002.jpeg)"
         bgMobile="url(./img/clonex_002_mobile.jpeg)"
       >
-        <Spacer w="100%" />
-        <Box borderRadius="2xl" overflow="hidden" alignSelf="center" m="4">
-          <Flex direction="column" bg="rgba(0,0,0,.5)" color="white" maxW="800px" w="100%">
+        <Flex justifyContent="center" m="4" w="100%">
+          <Flex
+            direction="column"
+            bg="rgba(0,0,0,.5)"
+            color="white"
+            maxW="800px"
+            w="100%"
+            alignSelf="center"
+            borderRadius="2xl"
+            overflow="hidden"
+          >
             <Flex bg="rgba(0,0,0,.5)" color="#cc9a54" p="4">
               <Flex>
                 <Avatar name="Axel Fiolle" src="./img/avatar.jpeg" />
@@ -183,8 +192,7 @@ const Home: BlitzPage = () => {
               </Link>
             </Box>
           </Flex>
-        </Box>
-        <Spacer w="100%" />
+        </Flex>
       </CustomSection>
       <CustomSection
         id="work"
@@ -192,7 +200,6 @@ const Home: BlitzPage = () => {
         bgMobile="url(./img/clonex_003_mobile.jpeg)"
       >
         <Flex direction="column" w="100%">
-          <Spacer h="100%" />
           <Box alignSelf="center">
             <Flex
               direction="column"
@@ -262,7 +269,6 @@ const Home: BlitzPage = () => {
               </a>
             </Flex>
           </Box>
-          <Spacer h="100%" />
         </Flex>
       </CustomSection>
 

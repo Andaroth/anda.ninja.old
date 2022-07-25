@@ -17,7 +17,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
       left="0"
       bg="rgba(0,0,0,.7)"
       color="white"
-      w="100vw"
+      w="100%"
       overflowX="auto"
     >
       <Link to="top" smooth={true}>
