@@ -176,7 +176,10 @@ const Home: BlitzPage = () => {
         </Box>
         <Spacer w="100%" />
       </CustomSection>
-      <CustomSection id="work" bg="url(./img/fast.jpeg)">
+      <CustomSection
+        id="work"
+        bg="linear-gradient(315deg, rgba(21,102,255,1) 0%, rgba(148,20,161,1) 57%)"
+      >
         <Flex direction="column" w="100%">
           <Spacer h="100%" />
           <Box alignSelf="center">
