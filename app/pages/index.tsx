@@ -235,7 +235,7 @@ const Home: BlitzPage = () => {
                 />
               </Grid>
               <a href="mailto:ax.fiolle@gmail.com">
-                <Button mt="6" className="detail large" fontSize="2xl">
+                <Button mt="6" className="detail large" fontSize="xl">
                   Get in touch
                 </Button>
               </a>
