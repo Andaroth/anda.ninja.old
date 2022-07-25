@@ -20,6 +20,7 @@ model User {
   email          String   @unique
   hashedPassword String?
   role           String   @default("USER")
+  walletAddress  String?
 
   tokens   Token[]
   sessions Session[]
