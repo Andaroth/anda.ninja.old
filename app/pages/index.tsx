@@ -50,6 +50,7 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
           h={{ sm: "180px", md: "400px", xl: "180px" }}
           overflow="hidden"
           margin="0 auto"
+          borderRadius="xl"
         >
           <Img
             w="100%"
@@ -85,12 +86,12 @@ const Home: BlitzPage = () => {
               </Heading>
               <Text my="6" fontSize="xl" color="white">
                 With more than fifteen years <strong>building</strong> and{" "}
-                <strong>revolutionizing</strong> the <strong>web</strong>, I can help you create and
-                assert your project.
+                <strong>revolutionizing</strong> the <strong>web</strong>, I can help you to create
+                and assert your project.
               </Text>
               <Box alignSelf="center">
                 <Link to="about" smooth={true}>
-                  <Button className="detail">About me</Button>
+                  <Button className="detail">Learn more</Button>
                 </Link>
               </Box>
             </Flex>
@@ -105,7 +106,7 @@ const Home: BlitzPage = () => {
         <Spacer w="100%" />
         <Box borderRadius="2xl" overflow="hidden" alignSelf="center" m="4">
           <Flex direction="column" bg="rgba(0,0,0,.5)" color="white" maxW="800px" w="100%">
-            <Flex bg="#63696d" color="#cc9a54" p="4">
+            <Flex bg="rgba(0,0,0,.5)" color="#cc9a54" p="4">
               <Flex>
                 <Avatar name="Axel Fiolle" src="./img/avatar.jpeg" />
                 <Heading fontSize="3xl" ml="4" lineHeight="48px">
@@ -249,6 +250,23 @@ const Home: BlitzPage = () => {
       <FloatingMenu page="home" />
 
       <style jsx global>{`
+        @font-face {
+          font-family: "UbuntuTh";
+          src: url("./Ubuntu-Th.ttf") format("truetype");
+        }
+        @font-face {
+          font-family: "UbuntuL";
+          src: url("./Ubuntu-L.ttf") format("truetype");
+        }
+        @font-face {
+          font-family: "Ubuntu";
+          src: url("./Ubuntu-R.ttf") format("truetype");
+        }
+        @font-face {
+          font-family: "UbuntuB";
+          src: url("./Ubuntu-B.ttf") format("truetype");
+        }
+
         strong {
           color: #cc9a54;
         }

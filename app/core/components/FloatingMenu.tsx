@@ -32,7 +32,10 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
             }
           `}
         >
-          <span className="nomobile">Axel&nbsp;</span>Andaroth
+          <Text display="none">
+            <span className="nomobile">&nbsp;Axel&nbsp;</span>Andaroth
+          </Text>
+          <Text>![Λnda]</Text>
         </Heading>
       </Link>
       <Spacer w="100%" />
@@ -78,6 +81,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
               mr="4"
               cursor="pointer"
               mt="2"
+              textTransform="uppercase"
               css={`
                 padding: 0;
                 &:hover {

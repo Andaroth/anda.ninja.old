@@ -32,14 +32,14 @@ export const CustomSection: FC<Props> = ({
       id={id}
       w={width || "100vw"}
       minH={height || "100vh"}
-      backgroundAttachment={backgroundAttachment || "fixed"}
       backgroundSize={backgroundSize || "cover"}
       backgroundPosition={backgroundPosition || "center"}
       pt={pt || "64px"}
       css={`
-        background-image: ${bg || "transparent"};
-        @media screen and (max-width: 800px) {
-          background-image: ${bgMobile || bg || "transparent"};
+        background-image: ${bgMobile || bg || "transparent"};
+        @media screen and (min-width: 800px) {
+          background-attachment: ${backgroundAttachment || "fixed"};
+          background-image: ${bg || "transparent"};
         }
       `}
     >
