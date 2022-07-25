@@ -7,7 +7,7 @@ import {
   ErrorFallbackProps,
   useQueryErrorResetBoundary,
 } from "blitz"
-import LoginForm from "app/auth/components/LoginForm"
+// import LoginForm from "app/auth/components/LoginForm"
 
 import { ChakraProvider } from "@chakra-ui/react"
 
@@ -28,7 +28,7 @@ function RootErrorFallback({ error, resetErrorBoundary }: ErrorFallbackProps) {
   if (error instanceof AuthenticationError) {
     return (
       <ChakraProvider>
-        <LoginForm onSuccess={resetErrorBoundary} />
+        Auth Error{/* <LoginForm onSuccess={resetErrorBoundary} /> */}
       </ChakraProvider>
     )
   } else if (error instanceof AuthorizationError) {
