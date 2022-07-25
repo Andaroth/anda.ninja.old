@@ -1,13 +1,16 @@
-import { Suspense, useState } from "react"
-import { Link, BlitzPage, useMutation, Routes } from "blitz"
+import { useState } from "react"
+import { BlitzPage, useMutation } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import logout from "app/auth/mutations/logout"
+import { Link } from "react-scroll"
 
 import { Heading, Flex, Box, Text, Button } from "@chakra-ui/react"
 
 import LoginForm from "app/auth/components/LoginForm"
 import SignupForm from "app/auth/components/SignupForm"
+
+import CustomSection from "app/core/components/Section"
 
 const UserInfo = () => {
   const currentUser = useCurrentUser()
@@ -72,22 +75,63 @@ const UserInfo = () => {
 const Home: BlitzPage = () => {
   return (
     <div className="container">
+      <CustomSection id="about" bg="url(./img/clonex_001.jpeg)" backgroundAttachment="initial">
+        <Box
+          ml="calc(100% * 0.6)"
+          mr="4"
+          my="4"
+          p="4"
+          bg="rgba(255,255,255,.7)"
+          borderRadius="2xl"
+          w="100%"
+        >
+          <Heading as="h1" textAlign="center" w="100%">
+            Axel Andaroth
+          </Heading>
+          <Text fontWeight="bold" textAlign="center" w="100%">
+            FullStack Dev
+            <br />
+            Videogames &amp; websites
+            <br />
+            maker
+          </Text>
+          <Text my="4">
+            With more than fifteen years of experience in web design and developement, I can help
+            you to create your own website and assert your presence online.
+          </Text>
+        </Box>
+      </CustomSection>
+      <CustomSection bg="#2e3133" id="work"></CustomSection>
+      <CustomSection bg="white" id="contact"></CustomSection>
+
       <Box
         border="1px solid grey"
         p="4"
         borderRadius="2xl"
         position="fixed"
         top="24px"
-        right="24px"
-        bg="rgba(0,0,0,.7)"
+        left="24px"
+        bg="#2e3133"
         color="white"
       >
-        <Heading as="h1" mb="4">
-          Axel Andaroth
-        </Heading>
-        <Suspense fallback="Loading...">
+        <Link to="about" smooth={true}>
+          <Button variant="outline" mr="2">
+            About me
+          </Button>
+        </Link>
+        <Link to="work" smooth={true}>
+          <Button variant="outline" mr="2">
+            My work
+          </Button>
+        </Link>
+        <Link to="contact" smooth={true}>
+          <Button textTransform="uppercase" color="black">
+            Contact
+          </Button>
+        </Link>
+        {/* <Suspense fallback="Loading...">
           <UserInfo />
-        </Suspense>
+        </Suspense> */}
       </Box>
 
       <style jsx global>{`
