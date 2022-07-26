@@ -128,11 +128,12 @@ const Home: BlitzPage = () => {
             alignSelf="center"
             borderRadius="xl"
             overflow="hidden"
+            mt="35vh"
           >
             <Flex bg="rgba(0,0,0,.5)" color="#cc9a54" p="4">
               <Flex>
                 <Avatar name="Axel Fiolle" src="./img/avatar.jpeg" />
-                <Heading fontSize="3xl" ml="4" lineHeight="48px" fontFamily="Ubuntu">
+                <Heading fontSize="3xl" ml="4" lineHeight="48px" fontFamily="Ubuntu" w="100%">
                   <Text display="none">FullStack </Text>
                   <Flex>
                     <span className="hidden">
@@ -146,21 +147,16 @@ const Home: BlitzPage = () => {
             </Flex>
             <Flex direction="column" p="4">
               <Text pb="4">
-                Hello, my name is Axel Fiolle, alias <strong>Andaroth</strong>.
+                Hello, my name is Axel Fiolle, alias <strong>Andaroth</strong>! I was young when I
+                wrote my first line of code.
               </Text>
               <Text pb="4">
-                I was young when I wrote my first line of code, I always have been interested in the
-                computering world.
-                <br />
-                At first, I learned to handle any design tool then I discovered the{" "}
-                <strong>art of code</strong> by myself.
+                My dedication for the <strong>art of code</strong> and my curiosity made me jump
+                into the <strong>Web3 paradigm</strong>.
               </Text>
               <Text>
-                My natural taste of unknown and my initiative made me discover the power of the{" "}
-                <strong>Web3</strong>.
-                <br />
-                Let me help you getting online and to expand on the{" "}
-                <strong>Internet of Things</strong>!
+                Let me help you getting online and expand on the <strong>Internet of Things</strong>
+                !
               </Text>
             </Flex>
             <Grid
@@ -168,7 +164,7 @@ const Home: BlitzPage = () => {
               width="50%"
               margin="0 auto"
               textAlign="center"
-              my="4"
+              my="2"
             >
               <GridItem textAlign="center" m="2">
                 <Tooltip label="Join me on LinkedIn">
@@ -219,7 +215,7 @@ const Home: BlitzPage = () => {
                 </Tooltip>
               </GridItem>
             </Grid>
-            <Divider my="4" mx="auto" w="256px" maxW="50%" />
+            <Divider my="2" mx="auto" w="256px" maxW="50%" />
             <Box w="100%" textAlign="center">
               <Link to="work" smooth={true}>
                 <Button className="detail" m="4">
@@ -245,6 +241,7 @@ const Home: BlitzPage = () => {
               color="white"
               textAlign="center"
               m="4"
+              mt="35vh"
             >
               <Heading as="h2" fontSize="4xl" fontFamily="Ubuntu">
                 <Text display="none">I have multiple </Text>
