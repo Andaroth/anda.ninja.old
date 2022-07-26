@@ -87,9 +87,16 @@ const Home: BlitzPage = () => {
           <Flex className="about_content" direction="column">
             <Spacer h="100%" />
             <Box m="4" maxW={{ sm: "none", md: "33vw" }}>
-              <Flex direction="column" bg="rgba(0,0,0,.7)" borderRadius="2xl" p="4" mb="4">
+              <Flex
+                direction="column"
+                bg="rgba(0,0,0,.7)"
+                borderRadius="xl"
+                p="4"
+                mb="4"
+                textAlign="center"
+              >
                 <Heading color="#cc9a54" w="100%" fontFamily="Ubuntu">
-                  Game Maker &amp; Web Dev
+                  Game Maker &amp;&nbsp;Web&nbsp;Dev
                 </Heading>
                 <Text my="6" fontSize="xl" color="white">
                   With more than fifteen years <strong>building</strong> and{" "}
@@ -119,7 +126,7 @@ const Home: BlitzPage = () => {
             maxW="800px"
             w="100%"
             alignSelf="center"
-            borderRadius="2xl"
+            borderRadius="xl"
             overflow="hidden"
           >
             <Flex bg="rgba(0,0,0,.5)" color="#cc9a54" p="4">
@@ -127,10 +134,13 @@ const Home: BlitzPage = () => {
                 <Avatar name="Axel Fiolle" src="./img/avatar.jpeg" />
                 <Heading fontSize="3xl" ml="4" lineHeight="48px" fontFamily="Ubuntu">
                   <Text display="none">FullStack </Text>
-                  <Text>
-                    Web dev<Text display="none">eloper</Text> passionate about new tech
-                    <Text display="none">nologie</Text>s
-                  </Text>
+                  <Flex>
+                    <span className="hidden">
+                      Web dev<span className="hidden">eloper</span>&nbsp;
+                    </span>
+                    Passionate&nbsp;about new tech
+                    <span className="nomobile">nologie</span>s
+                  </Flex>
                 </Heading>
               </Flex>
             </Flex>
@@ -142,13 +152,15 @@ const Home: BlitzPage = () => {
                 I was young when I wrote my first line of code, I always have been interested in the
                 computering world.
                 <br />
-                At first, I learned to handle any design tool and then discovered the{" "}
+                At first, I learned to handle any design tool then I discovered the{" "}
                 <strong>art of code</strong> by myself.
               </Text>
               <Text>
-                My natural taste of unknown and my initiative made me discover a lot of wonders.
+                My natural taste of unknown and my initiative made me discover the power of the{" "}
+                <strong>Web3</strong>.
                 <br />
-                Let me help you getting online and to expand all over the Internet!
+                Let me help you getting online and to expand on the{" "}
+                <strong>Internet of Things</strong>!
               </Text>
             </Flex>
             <Grid
@@ -207,7 +219,7 @@ const Home: BlitzPage = () => {
                 </Tooltip>
               </GridItem>
             </Grid>
-            <Divider />
+            <Divider my="4" mx="auto" w="256px" maxW="50%" />
             <Box w="100%" textAlign="center">
               <Link to="work" smooth={true}>
                 <Button className="detail" m="4">
@@ -228,20 +240,21 @@ const Home: BlitzPage = () => {
             <Flex
               direction="column"
               bg="rgba(0,0,0,.5)"
-              borderRadius="2xl"
+              borderRadius="xl"
               p="6"
               color="white"
               textAlign="center"
               m="4"
             >
-              <Heading as="h2" fontSize="4xl" mb="4" fontFamily="Ubuntu">
+              <Heading as="h2" fontSize="4xl" fontFamily="Ubuntu">
                 <Text display="none">I have multiple </Text>
                 <strong>Web3</strong> &amp; <strong>Blockchain</strong>
                 <Text display="none"> experiences:</Text>
               </Heading>
+              <Divider my="4" mx="auto" w="256px" maxW="50%" />
               <Text maxW={{ sm: "none", md: "50%" }} margin="0 auto">
-                I used to work with the best Web3 actors who trust me to implement their website
-                perfectly.
+                I used to work with the best actors from the metaverse who trust me to implement
+                their most important website.
               </Text>
               <Box alignSelf="center">
                 <Flex>
@@ -254,8 +267,10 @@ const Home: BlitzPage = () => {
                   />
                   <Text my="2">
                     <strong>
-                      My skills are refined and precise, I am like a ninja
-                      <Text display="none">.</Text>
+                      My skills are refined and precise,
+                      <br />
+                      I&apos;m a Code Guardian
+                      <span className="hidden">.</span>
                     </strong>
                   </Text>
                   <Img
@@ -289,7 +304,8 @@ const Home: BlitzPage = () => {
               <Box>
                 <a href="mailto:ax.fiolle@gmail.com">
                   <Button
-                    mt="6"
+                    mt="8"
+                    mb="2"
                     className="detail large"
                     fontSize="xl"
                     css={`
@@ -335,17 +351,22 @@ const Home: BlitzPage = () => {
         strong {
           color: #cc9a54;
         }
+
         button.detail {
           font-family: "UbuntuB";
           padding: 24px;
           background: #2e3133;
           color: white;
+          min-width: 180px;
           border-bottom: 2px solid #cc9a54;
+          /* border-radius: 0px !important;
+          clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 10% 100%, 0 80%); */
         }
         button.detail.large {
           font-family: "UbuntuL";
-          padding: 32px 24px;
+          padding: 36px 24px;
           font-size: 32px;
+          min-width: 260px;
         }
         button.detail.small {
           padding: 12px;
@@ -370,6 +391,10 @@ const Home: BlitzPage = () => {
           .nomobile {
             display: none;
           }
+        }
+
+        .hidden {
+          display: none;
         }
       `}</style>
     </div>
