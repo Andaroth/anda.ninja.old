@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, useState, useEffect } from "react"
 
 import { Flex, Text, Heading, Spacer, Button } from "@chakra-ui/react"
 import { EmailIcon } from "@chakra-ui/icons"
@@ -10,6 +10,26 @@ interface Props {
 }
 
 export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
+  const [lastScrollState, setLastScroll] = useState(0)
+  const [newScrollState, setNewScroll] = useState(0)
+  const [delta, setDelta] = useState(0)
+
+  const displayTopBarBG = () => lastScrollState <= 80 || delta < 0
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      requestAnimationFrame(() => {
+        const offset = window.pageYOffset || 0
+        setNewScroll(offset)
+        requestAnimationFrame(() => {
+          setDelta(newScrollState - lastScrollState)
+          requestAnimationFrame(() => setLastScroll(offset))
+        })
+      })
+    })
+    return () => window.removeEventListener("scroll", () => {})
+  }, [lastScrollState, newScrollState])
+
   return (
     <header>
       <Flex
@@ -17,10 +37,11 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
         position="fixed"
         top="0"
         left="0"
-        bg="rgba(0,0,0,.7)"
+        bg={displayTopBarBG() ? "rgba(0,0,0,.7)" : "transparent"}
         color="white"
         w="100%"
         overflowX="auto"
+        transition="all .25s"
       >
         <Link to="top" smooth={true}>
           <Heading
@@ -34,9 +55,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
               }
             `}
           >
-            <Text display="none">
-              <span className="nomobile">&nbsp;Axel&nbsp;</span>Andaroth
-            </Text>
+            <Text display="none">Axel Andaroth</Text>
             <Text fontFamily="UbuntuL">![Λnda]</Text>
           </Heading>
         </Link>
@@ -58,7 +77,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
                     }
                   `}
                 >
-                  About me
+                  <span className="hidden">Learn more </span>About me
                 </Text>
               </Link>
               <Link to="work" smooth={true} className="nomobile">
@@ -75,7 +94,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
                     }
                   `}
                 >
-                  My work
+                  <span className="hidden">Discover </span>My work
                 </Text>
               </Link>
               <a href="mailto:ax.fiolle@gmail.com">
@@ -86,6 +105,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
                   mt="2"
                   px="1.5"
                   textTransform="uppercase"
+                  bg="rgba(0,0,0,.7)"
                   css={`
                     &:hover {
                       color: black;
@@ -96,7 +116,9 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
                   `}
                 >
                   <Flex>
-                    <Text mr="1">Contact</Text>
+                    <Text mr="1">
+                      Contact<span className="hidden"> me</span>
+                    </Text>
                     <EmailIcon className="icon" m="auto" mx="2px" />
                   </Flex>
                 </Button>

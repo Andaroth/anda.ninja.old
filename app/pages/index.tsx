@@ -99,7 +99,7 @@ const Home: BlitzPage = () => {
                 </Heading>
                 <Text my="6" fontSize="xl" color="white">
                   With more than fifteen years <strong>building</strong> and{" "}
-                  <strong>revolutionizing</strong> the <strong>web</strong>, I can help you to
+                  <strong>revolutionizing</strong> the <strong>web</strong>, I&nbsp;can help you to
                   create and assert your project.
                 </Text>
                 <Box alignSelf="center">
@@ -146,8 +146,8 @@ const Home: BlitzPage = () => {
             </Flex>
             <Flex direction="column" p="4">
               <Text pb="4">
-                Hello, my name is Axel Fiolle, alias <strong>Andaroth</strong>! I was young when I
-                wrote my first line of code.
+                Hello, my name is Axel Fiolle, alias <strong>Andaroth</strong>!<br />
+                I&nbsp;was young when I wrote my first line of code.
               </Text>
               <Text pb="4">
                 My dedication for the <strong>art of code</strong> and my curiosity made me jump
@@ -243,14 +243,14 @@ const Home: BlitzPage = () => {
               mt="35vh"
             >
               <Heading as="h2" fontSize="4xl" fontFamily="Ubuntu">
-                <Text display="none">I have multiple </Text>
+                <span className="hidden">I have multiple </span>
                 <strong>Web3</strong> &amp; <strong>Blockchain</strong>
-                <Text display="none"> experiences:</Text>
+                <span className="hidden"> experiences:</span>
               </Heading>
               <Divider my="4" mx="auto" w="256px" maxW="50%" />
               <Text maxW={{ sm: "none", md: "50%" }} margin="0 auto">
-                I used to work with the best actors from the metaverse who trust me to implement
-                their most important website.
+                I&nbsp;used to work with the best actors from the metaverse who trust me to
+                implement their most important website.
               </Text>
               <Box alignSelf="center">
                 <Flex>
