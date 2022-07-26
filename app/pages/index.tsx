@@ -40,6 +40,9 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
           color: black;
           text-decoration: underline;
         }
+        &:hover .screen {
+          transform: scale(1.1);
+        }
       `}
     >
       <a href={props.href} target="_blank" rel="noreferrer">
@@ -60,18 +63,14 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
           margin="0 auto"
         >
           <Img
+            className="screen"
             w="100%"
             h={{ sm: "180px", md: "400px", xl: "180px" }}
             src={props.bg}
             backgroundSize="cover"
             backgroundPosition="center"
             alt={props.name}
-            css={`
-              transition: all 0.5s ease-out;
-              &:hover {
-                transform: scale(1.1);
-              }
-            `}
+            transition="all 0.5s ease-out"
           />
         </Box>
       </a>
