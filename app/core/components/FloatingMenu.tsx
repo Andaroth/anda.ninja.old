@@ -14,7 +14,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
   const [newScrollState, setNewScroll] = useState(0)
   const [delta, setDelta] = useState(0)
 
-  const displayTopBarBG = () => lastScrollState <= 80 || delta < 0
+  const displayTopBarBG = () => lastScrollState > 80
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
