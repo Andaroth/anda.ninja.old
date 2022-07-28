@@ -65,7 +65,7 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
           <Box
             className="screen"
             w="100%"
-            h={{ sm: "180px", md: "400px", xl: "180px" }}
+            h={{ sm: "180px", md: "400px", xl: "160px" }}
             backgroundImage={`url(${props.bg})`}
             backgroundSize="cover"
             backgroundPosition="center"
@@ -103,7 +103,9 @@ const Home: BlitzPage = () => {
                 </Text>
                 <Box alignSelf="center">
                   <Link to="about" smooth={true}>
-                    <Button className="detail">Learn more</Button>
+                    <Button className="detail" colorScheme="transparent">
+                      Learn more
+                    </Button>
                   </Link>
                 </Box>
               </Flex>
@@ -216,7 +218,7 @@ const Home: BlitzPage = () => {
             <Divider my="2" mx="auto" w="256px" maxW="50%" />
             <Box w="100%" textAlign="center">
               <Link to="work" smooth={true}>
-                <Button className="detail" m="4">
+                <Button className="detail" colorScheme="transparent" m="4">
                   Discover my work
                 </Button>
               </Link>
@@ -303,6 +305,7 @@ const Home: BlitzPage = () => {
                     mt="8"
                     mb="2"
                     className="detail large"
+                    colorScheme="transparent"
                     fontSize="xl"
                     css={`
                       &:hover .icon {
@@ -346,17 +349,27 @@ const Home: BlitzPage = () => {
 
         strong {
           color: #cc9a54;
+          font-weight: normal !important;
         }
 
         button.detail {
           font-family: "UbuntuB";
           padding: 24px;
           background: #2e3133;
+          background: linear-gradient(
+            0deg,
+            rgba(204, 154, 84, 1) 0%,
+            rgba(82, 84, 85, 1) 50%,
+            rgba(46, 49, 51, 1) 100%
+          );
+          background-size: 100% 400%;
+          background-position: 0 0;
           color: white;
           min-width: 180px;
           border-bottom: 2px solid #cc9a54;
           /* border-radius: 0px !important;
           clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 10% 100%, 0 80%); */
+          transition: all 0.5s ease-in-out;
         }
         button.detail.large {
           font-family: "UbuntuL";
@@ -368,8 +381,7 @@ const Home: BlitzPage = () => {
           padding: 12px;
         }
         button.detail:hover {
-          background: #cc9a54;
-          color: white;
+          background-position: 0 100%;
         }
 
         .react-icons {
