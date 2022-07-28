@@ -198,7 +198,7 @@ const Home: BlitzPage = () => {
                 <span className="hidden"> experiences:</span>
               </Heading>
               <Divider my="4" mx="auto" w="256px" maxW="50%" />
-              <Text maxW={{ sm: "none", md: "50%" }} margin="0 auto">
+              <Text maxW={{ sm: "none", md: "66%" }} margin="0 auto">
                 I&nbsp;used to work with the best actors from the metaverse who trust me to
                 implement their most important website.
               </Text>
@@ -317,7 +317,7 @@ const Home: BlitzPage = () => {
           border-bottom: 2px solid #cc9a54;
           /* border-radius: 0px !important;
           clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 10% 100%, 0 80%); */
-          transition: all 0.5s ease-in-out;
+          transition: all 0.3s ease-in-out;
         }
         button.detail.large {
           font-family: "UbuntuL";
