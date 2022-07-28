@@ -1,5 +1,4 @@
 import { BlitzPage } from "blitz"
-import { Img } from "@chakra-ui/react"
 import Layout from "app/core/layouts/Layout"
 
 import {
@@ -14,6 +13,9 @@ import {
   Button,
   Divider,
   Tooltip,
+  Img,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react"
 
 import { Link } from "react-scroll"
@@ -58,19 +60,26 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
         </Text>
         <Box
           w="100%"
-          h={{ sm: "180px", md: "400px", xl: "180px" }}
+          h={{ sm: "180px", md: "400px", xl: "160px" }}
           overflow="hidden"
           margin="0 auto"
         >
           <Box
             className="screen"
             w="100%"
-            h={{ sm: "180px", md: "400px", xl: "160px" }}
+            h={{ sm: "180px", md: "400px", xl: "180px" }}
             backgroundImage={`url(${props.bg})`}
             backgroundSize="cover"
             backgroundPosition="center"
             transition="all 0.5s ease-out"
+            float="left"
           ></Box>
+          <Img
+            w="100%"
+            h={{ sm: "180px", md: "400px", xl: "180px" }}
+            src={props.bg}
+            alt={props.name}
+          />
         </Box>
       </a>
     </GridItem>
