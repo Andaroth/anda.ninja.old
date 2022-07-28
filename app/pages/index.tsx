@@ -100,7 +100,8 @@ const Home: BlitzPage = () => {
                 <Heading color="#cc9a54" w="100%" fontFamily="Ubuntu">
                   Game Maker &amp;&nbsp;Web&nbsp;Dev
                 </Heading>
-                <Text my="6" fontSize="xl" color="white">
+                <Divider my="4" mx="auto" w="256px" maxW="50%" />
+                <Text mb="6" fontSize="xl" color="white">
                   With more than fifteen years <strong>building</strong> and{" "}
                   <strong>revolutionizing</strong> the <strong>web</strong>, I&nbsp;can help you to
                   create and assert your project.
@@ -184,7 +185,7 @@ const Home: BlitzPage = () => {
             <Flex
               direction="column"
               bg="rgba(0,0,0,.5)"
-              maxW="800px"
+              maxW="1060px"
               borderRadius="xl"
               p="6"
               color="white"
@@ -202,6 +203,25 @@ const Home: BlitzPage = () => {
                 I&nbsp;used to work with the best actors from the metaverse who trust me to
                 implement their most important website.
               </Text>
+              <Grid
+                templateColumns={{ lg: "repeat(1, 1fr)", xl: "repeat(3, 1fr)" }}
+                gap={6}
+                w="100%"
+                alignSelf="center"
+                my="6"
+              >
+                <CustomerCard name="RTFKT" bg="./img/b2b/rtfkt.jpeg" href="https://rtfkt.com/" />
+                <CustomerCard
+                  name="GameOfBlocks"
+                  bg="./img/b2b/screenshot.jpeg"
+                  href="https://gameofblocks.io/"
+                />
+                <CustomerCard
+                  name="EtheRPG Online"
+                  bg="./img/b2b/etherpg.jpeg"
+                  href="https://etherpg.online/"
+                />
+              </Grid>
               <Box alignSelf="center">
                 <Flex>
                   <Img
@@ -211,7 +231,7 @@ const Home: BlitzPage = () => {
                     alignSelf="center"
                     m="auto 8px"
                   />
-                  <Text my="2">
+                  <Text fontSize="xl" my="2">
                     <strong>
                       My skills are refined and precise,
                       <br />
@@ -228,29 +248,10 @@ const Home: BlitzPage = () => {
                   />
                 </Flex>
               </Box>
-              <Grid
-                templateColumns={{ lg: "repeat(1, 1fr)", xl: "repeat(3, 1fr)" }}
-                gap={6}
-                w="100%"
-                alignSelf="center"
-                mt="2"
-              >
-                <CustomerCard name="RTFKT" bg="./img/b2b/rtfkt.jpeg" href="https://rtfkt.com/" />
-                <CustomerCard
-                  name="GameOfBlocks"
-                  bg="./img/b2b/screenshot.jpeg"
-                  href="https://gameofblocks.io/"
-                />
-                <CustomerCard
-                  name="EtheRPG Online"
-                  bg="./img/b2b/etherpg.jpeg"
-                  href="https://etherpg.online/"
-                />
-              </Grid>
               <Box>
                 <a href="mailto:ax.fiolle@gmail.com">
                   <Button
-                    mt="8"
+                    mt="6"
                     mb="2"
                     className="detail large"
                     colorScheme="transparent"
