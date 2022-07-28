@@ -12,18 +12,13 @@ import {
   GridItem,
   Button,
   Divider,
-  Tooltip,
   Img,
-  Wrap,
-  WrapItem,
 } from "@chakra-ui/react"
 
 import { Link } from "react-scroll"
 
 import CustomSection from "app/core/components/CustomSection"
 import FloatingMenu from "app/core/components/FloatingMenu"
-
-import { BsTwitter, BsInstagram, BsLinkedin, BsGithub } from "react-icons/bs"
 import { EmailIcon } from "@chakra-ui/icons"
 
 import Footer from "app/core/components/Footer"
@@ -138,9 +133,10 @@ const Home: BlitzPage = () => {
             borderRadius="xl"
             overflow="hidden"
             mt="35vh"
+            textAlign="center"
           >
             <Flex bg="rgba(0,0,0,.5)" color="#cc9a54" p="4">
-              <Flex>
+              <Flex m="auto">
                 <Avatar name="Axel Fiolle" src="./img/avatar.jpeg" />
                 <Heading fontSize="3xl" ml="4" lineHeight="48px" fontFamily="Ubuntu" w="100%">
                   <Text display="none">FullStack </Text>
@@ -168,63 +164,6 @@ const Home: BlitzPage = () => {
                 !
               </Text>
             </Flex>
-            <Grid
-              templateColumns="repeat(4, 1fr)"
-              width="50%"
-              margin="0 auto"
-              textAlign="center"
-              my="2"
-            >
-              <GridItem textAlign="center" m="2">
-                <Tooltip label="Join me on LinkedIn">
-                  <a
-                    href="https://www.linkedin.com/in/axel-fiolle/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="social"
-                  >
-                    <BsLinkedin className="react-icons" />
-                  </a>
-                </Tooltip>
-              </GridItem>
-              <GridItem textAlign="center" m="2">
-                <Tooltip label="Check my GitHub code">
-                  <a
-                    href="https://github.com/Andaroth"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="social"
-                  >
-                    <BsGithub className="react-icons" />
-                  </a>
-                </Tooltip>
-              </GridItem>
-              <GridItem textAlign="center" m="2">
-                <Tooltip label="Follow me on Twitter">
-                  <a
-                    href="https://twitter.com/Andaroth"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="social"
-                  >
-                    <BsTwitter className="react-icons" />
-                  </a>
-                </Tooltip>
-              </GridItem>
-              <GridItem textAlign="center" m="2">
-                <Tooltip label="Follow me on Instagram">
-                  <a
-                    href="https://instagram.com/an.da.ro.th"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="social"
-                  >
-                    <BsInstagram className="react-icons" />
-                  </a>
-                </Tooltip>
-              </GridItem>
-            </Grid>
-            <Divider my="2" mx="auto" w="256px" maxW="50%" />
             <Box w="100%" textAlign="center">
               <Link to="work" smooth={true}>
                 <Button className="detail" colorScheme="transparent" m="4">
@@ -400,13 +339,22 @@ const Home: BlitzPage = () => {
         .social:hover .react-icons {
           color: #cc9a54;
         }
+        .mobileOnly,
+        .mobileOnly {
+          display: none;
+        }
 
         @media screen and (max-width: 800px) {
           .about_content {
             margin-top: 50vh;
           }
-          .nomobile {
+          .nomobile,
+          .noMobile {
             display: none;
+          }
+          .mobileOnly,
+          .mobileOnly {
+            display: initial;
           }
         }
 
