@@ -62,16 +62,15 @@ const CustomerCard = (props: { name: string; href: string; bg: string }) => {
           overflow="hidden"
           margin="0 auto"
         >
-          <Img
+          <Box
             className="screen"
             w="100%"
             h={{ sm: "180px", md: "400px", xl: "180px" }}
-            src={props.bg}
+            backgroundImage={`url(${props.bg})`}
             backgroundSize="cover"
             backgroundPosition="center"
-            alt={props.name}
             transition="all 0.5s ease-out"
-          />
+          ></Box>
         </Box>
       </a>
     </GridItem>
@@ -235,6 +234,7 @@ const Home: BlitzPage = () => {
             <Flex
               direction="column"
               bg="rgba(0,0,0,.5)"
+              maxW="800px"
               borderRadius="xl"
               p="6"
               color="white"
