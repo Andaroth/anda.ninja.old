@@ -260,7 +260,8 @@ const Home: BlitzPage = () => {
           background: linear-gradient(
             0deg,
             rgba(204, 154, 84, 1) 0%,
-            rgba(82, 84, 85, 1) 50%,
+            rgba(204, 154, 84, 1) 50%,
+            rgba(46, 49, 51, 1) 51%,
             rgba(46, 49, 51, 1) 100%
           );
           background-size: 100% 400%;
@@ -270,7 +271,7 @@ const Home: BlitzPage = () => {
           border-bottom: 2px solid #cc9a54;
           /* border-radius: 0px !important;
           clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 10% 100%, 0 80%); */
-          transition: all 0.3s ease-in-out;
+          transition: all 1s cubic-bezier(0.2, 0.3, 0, 1);
         }
         button.detail.large {
           font-family: "UbuntuL";
