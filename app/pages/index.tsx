@@ -31,7 +31,7 @@ const Home: BlitzPage = () => {
         <Flex justifyContent="flex-end" w="100%">
           <Flex className="home_content" direction="column">
             <Spacer h="100%" />
-            <Box m="4" maxW={{ sm: "none", md: "33vw" }}>
+            <Box m="4" maxW={{ sm: "none", md: "33vw" }} minW={{ sm: "none", md: "600px" }}>
               <Flex
                 direction="column"
                 bg="rgba(0,0,0,.7)"
@@ -102,15 +102,15 @@ const Home: BlitzPage = () => {
               </Flex>
             </Flex>
             <Flex direction="column" p="4">
-              <Text pb="4">
-                Hello, my name is Axel Fiolle, alias <strong>Andaroth</strong>!<br />
-                I&nbsp;was young when I wrote my first line of code.
+              <Text pb="1" m="auto">
+                Hello, my name is Axel Fiolle, alias <strong>Andaroth</strong>!
               </Text>
-              <Text pb="4">
+              <Text pb="4">I&nbsp;was young when I wrote my first line of code.</Text>
+              <Text pb="4" maxW="420px" m="auto">
                 My dedication for the <strong>art of code</strong> and my curiosity made me jump
                 into the <strong>Web3 paradigm</strong>.
               </Text>
-              <Text>
+              <Text maxW="320px" m="auto">
                 Let me help you getting online and expand on the <strong>Internet of Things</strong>
                 !
               </Text>
@@ -149,7 +149,7 @@ const Home: BlitzPage = () => {
                 <span className="hidden"> experiences:</span>
               </Heading>
               <Divider my="4" mx="auto" w="256px" maxW="50%" />
-              <Text maxW={{ sm: "none", md: "66%" }} margin="0 auto">
+              <Text maxW={{ sm: "none", md: "420px" }} margin="0 auto">
                 I&nbsp;used to work with the best actors from the metaverse who trust me to
                 implement their most important website.
               </Text>
