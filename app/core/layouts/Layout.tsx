@@ -17,7 +17,7 @@ const Layout: BlitzLayout<{ title?: string; children?: React.ReactNode }> = ({
 
         <meta
           name="keywords"
-          content="axel,fiolle,andaroth,blockchain,ethereum,crypto,btc,eth,photographie,photographe,illustration,graphisme,graphiste,infographie,infographiste,web,design,designer,webmaster,user,experience,interface,ui,ux,uxui,portfolio,infographie,responsive,jquery,js,javascript,css,html,php,mysql,maria,mariadb,ruby,computer,graphics"
+          content="axel,fiolle,andaroth,developper,coder,blockchain,ethereum,crypto,btc,eth,web,designer,user,experience,interface,ui,ux,uxui,responsive,js,javascript,css,html,php,mysql,postgres,sql,node,nodejs,solidity"
         />
 
         <meta name="author" content="Axel Fiolle" />
