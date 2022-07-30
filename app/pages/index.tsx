@@ -22,71 +22,14 @@ import FloatingMenu from "app/core/components/FloatingMenu"
 import { EmailIcon } from "@chakra-ui/icons"
 
 import Footer from "app/core/components/Footer"
-
-const CustomerCard = (props: { name: string; href: string; bg: string }) => {
-  return (
-    <GridItem
-      textAlign="center"
-      borderRadius="2xl"
-      overflow="hidden"
-      bg="black"
-      color="white"
-      css={`
-        &:hover {
-          background: white;
-          color: black;
-          text-decoration: underline;
-        }
-        &:hover .screen {
-          transform: scale(1.1);
-        }
-      `}
-    >
-      <a href={props.href} target="_blank" rel="noreferrer">
-        <Text
-          p="2"
-          textAlign="center"
-          fontSize="24px"
-          fontWeight="bold"
-          cursor="pointer"
-          fontFamily="Ubuntu"
-        >
-          @&nbsp;{props.name}
-        </Text>
-        <Box
-          w="100%"
-          h={{ sm: "180px", md: "400px", xl: "160px" }}
-          overflow="hidden"
-          margin="0 auto"
-        >
-          <Box
-            className="screen"
-            w="100%"
-            h={{ sm: "180px", md: "400px", xl: "180px" }}
-            backgroundImage={`url(${props.bg})`}
-            backgroundSize="cover"
-            backgroundPosition="center"
-            transition="all 0.5s ease-out"
-            float="left"
-          ></Box>
-          <Img
-            w="100%"
-            h={{ sm: "180px", md: "400px", xl: "180px" }}
-            src={props.bg}
-            alt={props.name}
-          />
-        </Box>
-      </a>
-    </GridItem>
-  )
-}
+import CustomerCard from "app/core/components/CustomerCard"
 
 const Home: BlitzPage = () => {
   return (
     <div id="top" className="container">
       <CustomSection bg="url(./img/clonex_001.jpeg)" bgMobile="url(./img/clonex_001_mobile.jpeg)">
         <Flex justifyContent="flex-end" w="100%">
-          <Flex className="about_content" direction="column">
+          <Flex className="home_content" direction="column">
             <Spacer h="100%" />
             <Box m="4" maxW={{ sm: "none", md: "33vw" }}>
               <Flex
@@ -139,7 +82,14 @@ const Home: BlitzPage = () => {
             <Flex bg="rgba(0,0,0,.5)" color="#cc9a54" p="4">
               <Flex m="auto">
                 <Avatar name="Axel Fiolle" src="./img/avatar.jpeg" />
-                <Heading fontSize="3xl" ml="4" lineHeight="48px" fontFamily="Ubuntu" w="100%">
+                <Heading
+                  fontSize="3xl"
+                  ml="4"
+                  lineHeight="48px"
+                  fontFamily="Ubuntu"
+                  w="100%"
+                  textAlign="left"
+                >
                   <Text display="none">FullStack </Text>
                   <Flex>
                     <span className="hidden">
@@ -230,13 +180,14 @@ const Home: BlitzPage = () => {
                     height="24px"
                     alignSelf="center"
                     m="auto 8px"
+                    className="nomobile"
                   />
                   <Text fontSize="xl" my="2">
                     <strong>
                       My skills are refined and precise,
                       <br />
                       I&apos;m a Code Guardian
-                      <span className="hidden">.</span>
+                      <span className="mobileOnly">.</span>
                     </strong>
                   </Text>
                   <Img
@@ -245,6 +196,7 @@ const Home: BlitzPage = () => {
                     height="24px"
                     alignSelf="center"
                     m="auto 8px"
+                    className="nomobile"
                   />
                 </Flex>
               </Box>
@@ -346,14 +298,11 @@ const Home: BlitzPage = () => {
         }
 
         @media screen and (max-width: 800px) {
-          .about_content {
-            margin-top: 50vh;
-          }
           .nomobile,
           .noMobile {
             display: none;
           }
-          .mobileOnly,
+          .mobileonly,
           .mobileOnly {
             display: initial;
           }
