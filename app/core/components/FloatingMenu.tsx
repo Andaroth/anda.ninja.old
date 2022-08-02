@@ -97,7 +97,7 @@ export const FloatingMenu: FC<Props> = ({ page = "home" }: Props) => {
                   <span className="hidden">Discover </span>My work
                 </Text>
               </Link>
-              <a href="mailto:ax.fiolle@gmail.com">
+              <a href="https://calendly.com/d/dv7-hmp-prs" target="_blank" rel="noreferrer">
                 <Button
                   variant="outline"
                   mr="4"
