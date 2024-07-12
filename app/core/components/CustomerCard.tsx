@@ -4,6 +4,7 @@ interface CustomerCardProps {
   name: string
   href: string
   bg: string
+  height?: any
 }
 
 export const CustomerCard = (props: CustomerCardProps) => {
@@ -38,14 +39,14 @@ export const CustomerCard = (props: CustomerCardProps) => {
         </Text>
         <Box
           w="100%"
-          h={{ sm: "180px", md: "400px", xl: "160px" }}
+          h={props.height || { sm: "180px", md: "400px", xl: "160px" }}
           overflow="hidden"
           margin="0 auto"
         >
           <Box
             className="screen"
             w="100%"
-            h={{ sm: "180px", md: "400px", xl: "180px" }}
+            h={props.height || { sm: "180px", md: "400px", xl: "180px" }}
             backgroundImage={`url(${props.bg})`}
             backgroundSize="cover"
             backgroundPosition="center"
@@ -54,7 +55,7 @@ export const CustomerCard = (props: CustomerCardProps) => {
           ></Box>
           <Img
             w="100%"
-            h={{ sm: "180px", md: "400px", xl: "180px" }}
+            h={props.height || { sm: "180px", md: "400px", xl: "180px" }}
             src={props.bg}
             alt={props.name}
           />

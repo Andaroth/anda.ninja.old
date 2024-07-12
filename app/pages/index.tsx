@@ -172,6 +172,12 @@ const Home: BlitzPage = () => {
                   href="https://etherpg.online/"
                 />
               </Grid>
+              <CustomerCard
+                name="AndaPirate"
+                bg="./img/b2b/andapirate.jpeg"
+                href="https://andapirate.com/"
+                height={{ sm: "180px", md: "400px", xl: "400px" }}
+              />
               <Box alignSelf="center">
                 <Flex>
                   <Img
