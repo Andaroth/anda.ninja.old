@@ -207,7 +207,7 @@ const Home: BlitzPage = () => {
                 </Flex>
               </Box>
               <Box>
-                <a href="https://calendly.com/d/dv7-hmp-prs" target="_blank" rel="noreferrer">
+                <a href="mailto:ax.fiolle@gmail.com" target="_blank" rel="noreferrer">
                   <Button
                     mt="6"
                     mb="2"
